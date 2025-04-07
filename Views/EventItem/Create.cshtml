@@ -1,0 +1,62 @@
+﻿@model CLDVPOE25.Models.EventItem
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Event</h1>
+
+<h4>Event</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Name Field -->
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <!-- Type of Event Field -->
+            <div class="form-group">
+                <label asp-for="TypeOfEvent" class="control-label"></label>
+                <input asp-for="TypeOfEvent" class="form-control" />
+                <span asp-validation-for="TypeOfEvent" class="text-danger"></span>
+            </div>
+
+            <!-- Date of Event Field (date-only input) -->
+            <div class="form-group">
+                <label asp-for="DateOfEvent" class="control-label"></label>
+                <input asp-for="DateOfEvent" class="form-control" type="date" />
+                <span asp-validation-for="DateOfEvent" class="text-danger"></span>
+            </div>
+
+            <!-- Contact Email Field -->
+            <div class="form-group">
+                <label asp-for="ContactEmail" class="control-label"></label>
+                <input asp-for="ContactEmail" class="form-control" />
+                <span asp-validation-for="ContactEmail" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
